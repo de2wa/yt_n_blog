@@ -40,6 +40,7 @@ for(var k = 0; k < dataEmail.length; k++)
     {
     //Logger.log('content: ' + results[i]);
     var judulblog = datajudul[j];
+    var idmovie = dataid[j];
     var deskripsiblog1 = datades[j+1];
     var deskripsiblog2 = datades[j+2];
     var deskripsiblog3 = datades[j+3];
@@ -47,7 +48,7 @@ for(var k = 0; k < dataEmail.length; k++)
     var deskripsiblog5 = datades[j+5];
     var imageblog = dataimage[j];
 
-    var konten2 = ["<h3>" + datajudul[j] + " Full Movie</h3> <img alt='" + datajudul[j] + "' src='" + dataimage[j] + "' width='75%'/><p><i>" + datajudul[j] + "</i>  Movies, tell story about " + datades[j] + "</p><p>Watch <strong>" + datajudul[j] + "</strong> Full Movie For Free, Please Click button bellow!</p><p id='playnow'> </p><!--more-->"] ;
+    var konten2 = ["<h3>" + datajudul[j] + " Full Movie</h3> <img alt='" + datajudul[j] + "' src='" + dataimage[j] + "' width='75%'/><p><i>" + datajudul[j] + "</i>  Movies, tell story about " + datades[j] + "</p><p>Watch <strong>" + datajudul[j] + "</strong> Full Movie For Free, Please Click button bellow!</p><div id='playnow'><a href='https://netflix-video.de2wa.com/play.php?movie=" + idmovie + "'> <img  width='250px' src='https://cdnx.de2wa.com/asset/watch.jpg'></a></div><!--more-->"] ;
     var konten3 = ["<h4>" + datajudul[j+1] + "</h4> <img alt='" + datajudul[j+1] + "' src='" + dataimage[j+1] + "' width='75%'/><p>" + datades[j+1] + "</p>"] ;
    var konten4 = ["<h4>" + datajudul[j+2] + "</h4> <img alt='" + datajudul[j+2] + "' src='" + dataimage[j+2] + "' width='75%'/><p>" + datades[j+2] + "</p>"] ;
    var konten5 = ["<h4>" + datajudul[j+3] + "</h4> <img alt='" + datajudul[j+3] + "' src='" + dataimage[j+3] + "' width='75%'/><p>" + datades[j+3] + "</p>"] ;
