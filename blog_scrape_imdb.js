@@ -13,7 +13,7 @@ function mainFunction1()
 
  var rand = Math.floor(Math.random() * (9000 - 1 + 1)) + 1;
   var url = "https://www.imdb.com/search/title/?title_type=feature&genres=" + genre + "&start=" + rand + "&explore=genres&ref_=adv_nxt";
-  //var url = "https://www.imdb.com/search/title/?title_type=feature&year=2022&ref_=adv_nxt";
+  //var url = "https://www.imdb.com/search/title/?title_type=feature&start=" + rand + "&year=2022&ref_=adv_nxt";
 
   var str = UrlFetchApp.fetch(url).getContentText();
   var data1 = str.replace(/&quot;/g, '"');
