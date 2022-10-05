@@ -36,13 +36,13 @@ done
 
 ffmpeg -i "https://de2wa.com/video/introclick.mp4"  -acodec copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "introclick.ts"
 
-for (( f=11 ; f<=50; f++ )); 
+for (( f=1 ; f<=20; f++ )); 
 do
 rm mylist.txt 
 
 echo "file 'introclick.ts'" >> mylist.txt
 
-for (( i=1 ; i<=3600; i++ ));  do echo "file 'image/video$(shuf -i 10-99 -n 1).ts'" >> mylist.txt; done
+for (( i=1 ; i<=$(shuf -i 2500-3600 -n 1); i++ ));  do echo "file 'image/video$(shuf -i 10-99 -n 1).ts'" >> mylist.txt; done
 
 ffmpeg -f concat -i mylist.txt -vcodec copy viral_movie_video$f.mp4
 
