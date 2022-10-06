@@ -62,7 +62,7 @@ function clearRecords()
 
 function addRecord(count, judul, gambar, deskripsi) {
   var ss= SpreadsheetApp.getActiveSpreadsheet();
-  var tableSheet = ss.getSheetByName("TABLE");
+  var tableSheet = ss.getSheetByName("Sheet1");
   var currentRow = tableSheet.getLastRow();
   var nextRow = currentRow + 1;
   tableSheet.setRowHeight(nextRow, 30);
