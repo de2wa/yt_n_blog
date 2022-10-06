@@ -72,12 +72,13 @@ var title_blog = "Watch " + judulblog[0] + " Full Movie Online Streaming ";
 
     //var mail = dataemail[k];
     Logger.log(dataEmail[k]); 
+    GmailApp.sendEmail(dataEmail[k], title_blog, '',{htmlBody: konten} );
 
-    MailApp.sendEmail({
-      to: "" + dataEmail[k] + ""
-      , subject: title_blog
-      , htmlBody: konten
-    });
+ //   MailApp.sendEmail({
+   //   to: "" + dataEmail[k] + ""
+  //    , subject: judulblog[0]
+  //    , htmlBody: konten
+//    });
 //} catch (e) {
   // ignore
 //}
