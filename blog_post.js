@@ -13,7 +13,7 @@ function mainFunction()
   //var values = SpreadsheetApp.getSheetByName("TABLE").getRange("A:C").getValues();
 
   var ss= SpreadsheetApp.getActiveSpreadsheet();
-  var tableSheet1 = ss.getSheetByName("TABLE");
+  var tableSheet1 = ss.getSheetByName("Sheet1");
   var judulsheet = tableSheet1.getRange("C:C").getValues();
   var dessheet = tableSheet1.getRange("D:D").getValues();
   var imagesheet = tableSheet1.getRange("B:B").getValues();
@@ -24,7 +24,7 @@ function mainFunction()
   var datades = dessheet.filter(String);
   var dataimage = imagesheet.filter(String);
   
-  var emailSheet1 = ss.getSheetByName("EMAIL");
+  var emailSheet1 = ss.getSheetByName("Sheet2");
   var emails = emailSheet1.getRange("A:A").getValues();
   var dataEmail = emails.filter(String);
   //Logger.log(dataemail[0]);
@@ -56,7 +56,7 @@ for(var k = 0; k < dataEmail.length; k++)
     }
 
     var konten1 = deskripsiblog5 + " <b>" +judulblog + "</b> " + deskripsiblog1 + " " + deskripsiblog3 + " " + deskripsiblog4 + ".";
-    var konten11 = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>  		<script type='text/javascript' src='https://cdnx.de2wa.com/asset/grup1.js.php'/></script>";
+    var konten11 = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>  		<script type='text/javascript' src='https://cdnx.de2wa.com/asset/image.js.php'/></script>";
     var konten = konten1 + konten2 + konten3 + konten6 + konten7 + konten8 + konten9 + konten10 + konten11;
 //try {
  // SpreadsheetApp.doThing()
