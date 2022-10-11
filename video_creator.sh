@@ -10,8 +10,8 @@ sudo chmod a+rx /usr/local/bin/yt-dlp
 
 rm *.ts
 rm *.mp4
-yt-dlp -f 22 https://www.youtube.com/watch?v=jkAcNHwM_4k -o input1.mp4
-yt-dlp -f 22 https://www.youtube.com/watch?v=jkAcNHwM_4k -o input2.mp4
+yt-dlp -f 22 https://www.youtube.com/watch?v=MkX43WNgfes -o input2.mp4
+yt-dlp -f 22 https://www.youtube.com/watch?v=5BnfqRmzHC8 -o input1.mp4
 
 
 ffmpeg -i "https://de2wa.com/video/introclick.mp4"  -acodec copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "introclick.ts"
