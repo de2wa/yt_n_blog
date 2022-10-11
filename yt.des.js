@@ -46,7 +46,7 @@ function update(video,i) {
   var tableSheet1 = ss.getSheetByName("Sheet1");
   var titlesheet = tableSheet1.getRange("A:A").getValues();
     var mid = titlesheet.filter(String);
-  
+  var mid = title.replace(/tt/g, "");
 
   var dataMovie = getData(mid[i]);
   var title = dataMovie.title;
@@ -65,7 +65,7 @@ function update(video,i) {
 
   function getData(mid) {
    
-  var url = 'http://api.themoviedb.org/3/movie/tt' + mid + '?api_key=8c486b331d0164e5ae261aad23004b4f&language=en';
+  var url = 'http://api.themoviedb.org/3/movie/' + mid + '?api_key=8c486b331d0164e5ae261aad23004b4f&language=en';
     var response = UrlFetchApp.fetch(url); // get feed
  var data = JSON.parse(response.getContentText()); //
   //var data = dataAll.value.items;
