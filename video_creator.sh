@@ -27,6 +27,6 @@ done
 mkdir aajadi 
 
 for (( i=1 ; i<=40; i++ ));  do 
-ffmpeg -i "concat:introclick.ts|intro$(shuf -i 1-10 -n 1).ts|input$(shuf -i 1-10 -n 1).ts|intro$(shuf -i 1-10 -n 1).ts|input$(shuf -i 1-10 -n 1).ts" -acodec copy -vcodec copy aajadi/viral_movie_video$i.mp4
+ffmpeg -i "concat:introclick.ts|intro$(shuf -i 1-10 -n 1).ts|input$(shuf -i 1-10 -n 1).ts|intro$(shuf -i 1-10 -n 1).ts|input$(shuf -i 1-10 -n 1).ts|input$(shuf -i 1-10 -n 1).ts" -acodec copy -vcodec copy aajadi/viral_movie_video$i.mp4
 done
 
