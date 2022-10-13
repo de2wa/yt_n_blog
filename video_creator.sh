@@ -14,7 +14,7 @@ yt-dlp -f 22 https://www.youtube.com/watch?v=mfDfHAO09RY -o input1.mp4
 #yt-dlp -f 22 https://www.youtube.com/watch?v=5BnfqRmzHC8 -o input1.mp4
 
 
-ffmpeg -i "https://de2wa.com/video/introclick.mp4"  -acodec copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "introclick.ts"
+ffmpeg -i "https://de2wa.com/video/introclick1.mp4"  -acodec copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "introclick.ts"
 
 for (( i=1 ; i<=10; i++ ));  do 
 ffmpeg -i "https://de2wa.com/video/input2.mp4" -ss 00:$(shuf -i 10-59 -n 1):00 -t 00:$(shuf -i 20-40 -n 1):00 -acodec copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "input$i.ts"
