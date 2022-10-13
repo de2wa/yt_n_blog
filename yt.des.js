@@ -55,7 +55,7 @@ Logger.log(mid[i]);
   var title = title.replace(/,/g, "");
   var title2 = title.replace(/ /g, "");
  // var judul =  title + " Full Movie #movie #film #pelicula #viral #" + title2;
- var judul =  title + " FULL MOVIE HD | #movie #film #pelicula #viral #" + title2;
+ var judul =  title + " FULL MOVIE HD | #movie #film #pelicula #viral";
  // var judul =  title + " FuLL'MoVie HD (QUALITY) | #movie #film #pelicula #viral #" + title2;
 
 	var tags = "movie, film, imdb, netflix, pelicula, full movie, viral, film, " + title + " Full Eng Dub , " + title + " Full hd quality , " + title + " Full Eng Subtitle , " + title + " Full Eng Dubbed , Watch " + title + " Full Online , " + title + " Full Movie , " + title + " Película Completa , Psicosis pelicula completa , movie free, movie english, , pelicula completa en espanol, movie clips, trailer, online movie";
@@ -65,6 +65,7 @@ var deskripsi = title + " WATCH NOW FREE ▶️  https:\/\/www.youtube.com\/redi
 	
 	video.snippet.title = judul;//deskripsis[i];
     video.snippet.description = deskripsi;//deskripsis[i];
+	video.snippet.tags = [tags.split(",")];//deskripsis[i];
 	 Logger.log(judul);
 	YouTube.Videos.update(video,'snippet');
 	}
