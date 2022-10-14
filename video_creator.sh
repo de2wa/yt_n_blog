@@ -10,7 +10,7 @@ sudo chmod a+rx /usr/local/bin/yt-dlp
 
 rm *.ts
 rm *.mp4
-yt-dlp -f best https://www.youtube.com/watch?v=mfDfHAO09RY -o input1.mp4
+yt-dlp -f best https://www.youtube.com/watch?v=cGhDjDwyBr0 -o input1.mp4
 #yt-dlp -f 22 https://www.youtube.com/watch?v=5BnfqRmzHC8 -o input1.mp4
 
 
