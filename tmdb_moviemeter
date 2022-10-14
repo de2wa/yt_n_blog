@@ -23,7 +23,7 @@ function mainFunction1()
 
   const mainRegex = /<td class="titleColumn"([\s\S]*?)velocity/gi;
   var results = data.match(mainRegex);
-  Logger.log(results);
+  //Logger.log(results);
 
   const mid = /(?<=href="\/title\/).*?(?=\/)/gi;
   //const title = /(?<=<img alt=").*?(?=")/gi;
