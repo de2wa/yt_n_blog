@@ -56,7 +56,7 @@ Logger.log(mid[i]);
   var title2 = title.replace(/ /g, "");
  // var judul =  title + " Full Movie #movie #film #pelicula #viral #" + title2;
  //var judul =  title + " FULL MOVIE HD | #movie #film #pelicula #viral";
- var judul =  title + " pelicula completa en español | #movie #pelicula ";
+ var judul =  title + " pelicula completa en español | #full #movie #pelicula ";
 
 	var tags = "movie, film, imdb, netflix, pelicula, full movie, viral, film, " + title + " free, " + title + ", Full Movie , " + title + " Película Completa , Psicosis pelicula completa , movie free, movie english, , pelicula completa en espanol, movie clips, trailer, online movie";
   var deskrip = dataMovie.overview;
