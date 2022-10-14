@@ -34,7 +34,7 @@ function mainFunction1()
 //Logger.log(mid);
   //const teamLogoPass = /<img alt="([\s\S]*?)" class="hCL kVc L4E MIw"/gi;
 
-for(var i = 0; i < 50; i++)
+for(var i = 0; i < 100; i++)
   {
     //Logger.log('content: ' + results[i]);
     var id = results[i].match(mid);
