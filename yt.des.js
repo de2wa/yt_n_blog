@@ -67,7 +67,10 @@ var komen = judul + "▶️ Link https:\/\/www.youtube.com\/redirect?event=video
     video.snippet.description = deskrip;//deskripsis[i];
 	//video.snippet.tags = [tags.split(",")];//deskripsis[i];
 	 Logger.log("upload " + i + judul);
+	
 	YouTube.Videos.update(video,'snippet');
+	addRecord(i+1, video.id, mid[i])
+	
 	}
 
 
@@ -80,5 +83,20 @@ var komen = judul + "▶️ Link https:\/\/www.youtube.com\/redirect?event=video
  
  return data;
 //Logger.log(data);
+
+}
+
+ function addRecord(count, link, status) {
+  var ss= SpreadsheetApp.getActiveSpreadsheet();
+  var tableSheet = ss.getSheetByName("Sheet1");
+  var currentRow = tableSheet.getLastRow();
+  var nextRow = currentRow + 1;
+  tableSheet.setRowHeight(nextRow, 100);
+  //tableSheet.getRange(nextRow,2).setValue(count);
+  tableSheet.getRange(nextRow,2).setValue(link);
+	 tableSheet.getRange(nextRow,2).setValue(status);
+  //tableSheet.insertImage(logo, 2, nextRow);
+  //tableSheet.getRange(nextRow,3).setValue(gambar);
+  //tableSheet.getRange(nextRow,4).setValue(deskripsi);
 
 }
