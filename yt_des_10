@@ -51,7 +51,7 @@ function update(video,mid,i,y) {
   var year = years[0];
   //Logger.log(year);
  // var judul =  title + " Full Movie #movie #film #pelicula #viral #" + title2;
- var judul = [  title + " FULL MOVIE HD | #movie #film #pelicula #viral" , title + " FULL MOVIE (" + year + ") free HD | #movie #film #pelicula #viral",title + " FULL MOVIE HD  (" + year + ")", title + " Full Movie (" + year + ") Free HD",title + " " + year + " Full Movie Online HD" ];
+ var judul = [  title + " FuLLMovie HD (QUALITY)" , title + " FULL MOVIE (" + year + ") free HD | #movie #film #pelicula #viral",title + " FULL MOVIE HD  (" + year + ")", title + " Full Movie (" + year + ") Free HD",title + " " + year + " Full Movie Online HD" ];
 
 
 	
