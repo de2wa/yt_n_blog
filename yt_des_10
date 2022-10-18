@@ -1,0 +1,98 @@
+
+function main() {
+
+var mid1 = "tt0054215";
+var mid2 = "tt0032138";
+
+for(var i = 0; i < 5; i++) {
+	 var ss= SpreadsheetApp.getActiveSpreadsheet();
+  var tableSheet1 = ss.getSheetByName("Sheet1");
+  var idsheet  = tableSheet1.getRange("A:A").getValues();
+    var vid = idsheet.filter(String);
+//var vid = vids[i].replace(/https:\/\/www.youtube.com\/watch?v=/g, "");
+  var video = getVideo(vid[i]);
+	//Logger.log(allVideos[i]);
+  
+update(video, mid1,[i],[i]);
+
+	}
+
+  for(var is = 5; is < 10; is++) {
+	 var ss= SpreadsheetApp.getActiveSpreadsheet();
+  var tableSheet1 = ss.getSheetByName("Sheet1");
+  var idsheet  = tableSheet1.getRange("A:A").getValues();
+    var vid = idsheet.filter(String);
+//var vid = vids[i].replace(/https:\/\/www.youtube.com\/watch?v=/g, "");
+  var video = getVideo(vid[is]);
+	//Logger.log(allVideos[i]);
+  
+
+var y = is - 5;
+update(video, mid2,[is],y);
+	}
+
+}
+
+
+function getVideo(id) {
+	return YouTube.Videos.list('snippet', {id: id}).items[0];
+}
+
+function update(video,mid,i,y) {
+ Logger.log(mid);
+  var dataMovie = getData(mid);
+  var title = dataMovie.title;
+   var title = title.replace(/&quot;/g, '');
+  var title = title.replace(/[^\x00-\x7F]/g, "");
+  var title = title.replace(/,/g, "");
+  var title2 = title.replace(/ /g, "");
+  var release = dataMovie.release_date;
+  var years = release.split("-");
+  var year = years[0];
+  //Logger.log(year);
+ // var judul =  title + " Full Movie #movie #film #pelicula #viral #" + title2;
+ var judul = [  title + " FULL MOVIE HD | #movie #film #pelicula #viral" , title + " FULL MOVIE (" + year + ") free HD | #movie #film #pelicula #viral",title + " FULL MOVIE HD  (" + year + ")", title + " Full Movie (" + year + ") Free HD",title + " " + year + " Full Movie Online HD" ];
+
+
+	
+  var deskrip = judul[y] + " ▶️ Link https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com\/ \n " + dataMovie.overview + " \n#movie #film #pelicula #viral #" + title2;
+   
+	//https:\/\/www.youtube.com\/redirect?event=video_description&q=
+//var komen = judul + "▶️ Link https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com\/" + mid[i] + "\/es \n\n	#movie #film #pelicula #viral #" + title ;   
+	video.snippet.title = judul[y];//deskripsis[i];
+    video.snippet.description = deskrip;//deskripsis[i];
+	//video.snippet.tags = [tags.split(",")];//deskripsis[i];
+	 Logger.log("upload " + judul[y]);
+	
+	YouTube.Videos.update(video,'snippet');
+	//addRecord(i+1, video.id, mid[i])
+	
+	}
+
+
+  function getData(mid) {
+   
+  var url = 'http://api.themoviedb.org/3/movie/' + mid + '?api_key=8c486b331d0164e5ae261aad23004b4f&language=en';
+    var response = UrlFetchApp.fetch(url); // get feed
+ var data = JSON.parse(response.getContentText()); //
+  //var data = dataAll.value.items;
+ 
+ return data;
+//Logger.log(data);
+
+}
+
+ function addRecord(count, link, status) {
+  var ss= SpreadsheetApp.getActiveSpreadsheet();
+  var tableSheet = ss.getSheetByName("Sheet1");
+  var currentRow = tableSheet.getLastRow();
+  var nextRow = currentRow + 1;
+  tableSheet.setRowHeight(nextRow, 100);
+  //tableSheet.getRange(nextRow,2).setValue(count);
+  tableSheet.getRange(nextRow,2).setValue(link);
+	 tableSheet.getRange(nextRow,2).setValue(status);
+  //tableSheet.insertImage(logo, 2, nextRow);
+  //tableSheet.getRange(nextRow,3).setValue(gambar);
+  //tableSheet.getRange(nextRow,4).setValue(deskripsi);
+
+}
