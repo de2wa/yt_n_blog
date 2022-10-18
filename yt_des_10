@@ -55,7 +55,7 @@ function update(video,mid,i,y) {
 
 
 	
-  var deskrip = judul[y] + " ▶️ Link https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com\/ \n " + dataMovie.overview + " \n#movie #film #pelicula #viral #" + title2;
+  var deskrip = judul[y] + " ▶️ Link https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com\/en\/movie \n " + dataMovie.overview + " \n#movie #film #pelicula #viral #" + title2;
    
 	//https:\/\/www.youtube.com\/redirect?event=video_description&q=
 //var komen = judul + "▶️ Link https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com\/" + mid[i] + "\/es \n\n	#movie #film #pelicula #viral #" + title ;   
