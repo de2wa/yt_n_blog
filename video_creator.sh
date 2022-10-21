@@ -17,10 +17,10 @@ rm *.mp4
 ffmpeg -i "https://de2wa.com/video/introclick1.mp4"  -acodec copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "introclick.ts"
 
 for (( i=1 ; i<=10; i++ ));  do 
-ffmpeg -i "https://de2wa.com/video/input2.mp4" -ss 00:$(shuf -i 10-59 -n 1):00 -t 00:$(shuf -i 20-40 -n 1):00 -acodec copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "input$i.ts"
+ffmpeg -i "https://de2wa.com/video/input2.mp4" -i audio.wav  -ss 00:$(shuf -i 10-59 -n 1):00 -t 00:$(shuf -i 20-40 -n 1):00 -map 0:v -map 1:a -c:v copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "input$i.ts"
 done
 for (( i=1 ; i<=10; i++ ));  do 
-ffmpeg -i "https://de2wa.com/video/newvideo.mp4" -t 00:0$(shuf -i 5-9 -n 1):00 -an  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "intro$i.ts"
+ffmpeg -i "https://de2wa.com/video/input2.mp4" -t 00:0$(shuf -i 5-9 -n 1):00 -vf "eq=brightness=0.02, eq=contrast=0.$(shuf -i 5-8 -n 1)" -preset slow -crf 18 -b:v $(shuf -i 3-6 -n 1).5M   -vcodec copy -vbsf h264_mp4toannexb -f mpegts "intro$i.ts"
 done
 
 
