@@ -13,7 +13,7 @@ rm *.mp4
 yt-dlp -f best https://www.youtube.com/watch?v=h749ShyfnWE -o music.mp4
 yt-dlp -f 22 https://www.youtube.com/watch?v=WQmGwmc-XUY -o intro.mp4
 
-ffmpeg -i music.mp4 -acodec copy music.mp3
+ffmpeg -i music.mp4  music.mp3
 ffmpeg -i intro.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb -f mpegts intro.ts
 
 ffmpeg -i "https://de2wa.com/video/introclick1.mp4"  -acodec copy  -vcodec copy -vbsf h264_mp4toannexb -f mpegts "introclick.ts"
