@@ -22,7 +22,7 @@ for (( i=1 ; i<=10; i++ ));  do
 ffmpeg -i "https://de2wa.com/video/input2.mp4" -i music.mp3  -ss 00:0$(shuf -i 5-9 -n 1):00 -t 00:$(shuf -i 20-30 -n 1):00 -map 0:v -map 1:a  -f mpegts "input$i.ts"
 done
 for (( i=1 ; i<=10; i++ ));  do 
-ffmpeg -i "intro.mp4" -t 00:00:$(shuf -i 10-19 -n 1) -vf "eq=brightness=0.02, eq=contrast=0.$(shuf -i 5-8 -n 1)" -preset slow -crf 18 -b:v $(shuf -i 3-6 -n 1).5M  -acodec copy -vcodec copy -f mpegts "intro$i.ts"
+ffmpeg -i "intro.mp4" -t 00:00:$(shuf -i 10-19 -n 1) -vf "eq=brightness=0.02, eq=contrast=0.$(shuf -i 5-8 -n 1)" -preset slow -crf 18 -b:v $(shuf -i 3-6 -n 1).5M  -acodec copy  -f mpegts "intro$i.ts"
 done
 
 
