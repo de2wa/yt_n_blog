@@ -54,6 +54,10 @@ Logger.log(mid[i]);
   var title = title.replace(/[^\x00-\x7F]/g, "");
   var title = title.replace(/,/g, "");
   var title2 = title.replace(/ /g, "");
+	 var release = dataMovie.release_date;
+  var years = release.split("-");
+  var tahun = years[0];
+	
   var judul2 =  title + " (" + tahun + ") film complet en francais #movie #film #pelicula  #" + title2;
  var judul =  title + " film complet en francais";
  //var judul =  title + " pelicula completa en español | #full #movie #pelicula ";
