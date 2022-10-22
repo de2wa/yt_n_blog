@@ -54,12 +54,12 @@ Logger.log(mid[i]);
   var title = title.replace(/[^\x00-\x7F]/g, "");
   var title = title.replace(/,/g, "");
   var title2 = title.replace(/ /g, "");
-  var judul2 =  title + " Full Movie #movie #film #pelicula #viral #" + title2;
- var judul =  title + " FuLLMovie HD (QUALITY)";
+  var judul2 =  title + " film complet en francais #movie #film #pelicula  #" + title2;
+ var judul =  title + " film complet en francais";
  //var judul =  title + " pelicula completa en español | #full #movie #pelicula ";
 
 	var tags = "movie, film, imdb, netflix, pelicula, full movie, viral, film, " + title + " free, " + title + ", Full Movie , " + title + " Película Completa , Psicosis pelicula completa , movie free, movie english, , pelicula completa en espanol, movie clips, trailer, online movie";
-  var deskrip =  judul2 + " \n How to Watch " + title + " Full Movie? \n ▶️ Visit this link on.flixplus21.com on your browser \n or \n ▶️ Click Here https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com \n ▶️ and Click Go To Site \n\n" + dataMovie.overview + "\n \n  tags: " + tags;
+  var deskrip =  judul2 + " \n How to Watch " + title + " Full Movie? \n ▶️ Visit this link on.flixplus21.com on your browser \n or \n ▶️ Click Here https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com \n ▶️ and Click Go To Site \n Support Language : EN | ES | FR | AR | DE | NL | IT \n\n" + dataMovie.overview + "\n \n  tags: " + tags;
 	//https:\/\/www.youtube.com\/redirect?event=video_description&q=
 var komen = judul + "▶️ Link https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com\/" + mid[i] + "\/es \n\n	#movie #film #pelicula #viral #" + title ;   
 	video.snippet.title = judul;//deskripsis[i];
