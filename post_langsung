@@ -1,0 +1,44 @@
+function myFunction() {
+  var rand = Math.floor(Math.random() * (30 - 1 + 1)) + 1;
+  var url = "https://services.iimages4k.com/?nerd";
+  var str = UrlFetchApp.fetch(url).getContentText();
+
+  var str1 = UrlFetchApp.fetch(str).getContentText();
+  
+  const judul =   /(?<=<title>).*?(?=<\/title>)/gi;
+  var title = str1.match(judul);
+
+  const desc = /<div class="navi text-left">([\s\S]*?)<div class="row footer">/gi;
+    var des = str1.match(desc);
+
+
+Logger.log(title);
+
+  var ss= SpreadsheetApp.getActiveSpreadsheet();
+ var emailSheet1 = ss.getSheetByName("Sheet1");
+  var emails = emailSheet1.getRange("A:A").getValues();
+  var dataEmail = emails.filter(String);
+    var deskripsi = des + " ";
+
+     var emailSheet1 = ss.getSheetByName("Sheet1");
+
+  var id = emailSheet1.getRange("B1").getValues();
+  var ids = id.filter(String)[0];
+
+var currentRow = emailSheet1.getLastRow();
+if( ids <= 1000){
+  var num = +ids + 1;
+}else{
+  var num = 0;
+}
+  emailSheet1.getRange(1,2).setValue(num);
+
+var title_blog = "[" + rand + "+] " + title + " - ebook Pdf";
+
+    //var mail = dataemail[k];
+    Logger.log(num + "email: " + dataEmail[num]); 
+    GmailApp.sendEmail(dataEmail[num], title_blog, '',{htmlBody: deskripsi} );
+
+
+
+}
