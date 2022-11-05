@@ -1,6 +1,13 @@
 function myFunction() {
-  var rand = Math.floor(Math.random() * (30 - 11 + 1)) + 1;
-  var url = "https://dewiring.iimages4k.com/?nerd";
+  var ss= SpreadsheetApp.getActiveSpreadsheet();
+ var emailSheet1 = ss.getSheetByName("Sheet1");
+ var blog = emailSheet1.getRange("E:E").getValues();
+  var blogs = blog.filter(String);
+  var rand1 = Math.floor(Math.random() * blogs.length) + 1;
+  Logger.log(blogs[rand1]);
+
+  var rand = Math.floor(Math.random() * (50 - 21 + 1)) + 1;
+  var url = blogs[rand1]; //"https://dewiring.iimages4k.com/?nerd";
   var str = UrlFetchApp.fetch(url).getContentText();
 
   var str1 = UrlFetchApp.fetch(str).getContentText();
@@ -14,8 +21,7 @@ function myFunction() {
 
 Logger.log(title);
 
-  var ss= SpreadsheetApp.getActiveSpreadsheet();
- var emailSheet1 = ss.getSheetByName("Sheet1");
+  
   var emails = emailSheet1.getRange("A:A").getValues();
   var dataEmail = emails.filter(String);
     var deskripsi = des + " ";
@@ -25,8 +31,11 @@ Logger.log(title);
   var id = emailSheet1.getRange("B1").getValues();
   var ids = id.filter(String)[0];
 
+  var max = emailSheet1.getRange("D1").getValues();
+  //var max1 = max1.filter(String)[0];
+
 var currentRow = emailSheet1.getLastRow();
-if( ids <= 1000){
+if( ids <= max){
   var num = +ids + 1;
 }else{
   var num = 0;
