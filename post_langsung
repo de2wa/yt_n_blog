@@ -1,6 +1,6 @@
 function myFunction() {
   var rand = Math.floor(Math.random() * (30 - 11 + 1)) + 1;
-  var url = "https://wiring.iimages4k.com/?nerd";
+  var url = "https://dewiring.iimages4k.com/?nerd";
   var str = UrlFetchApp.fetch(url).getContentText();
 
   var str1 = UrlFetchApp.fetch(str).getContentText();
