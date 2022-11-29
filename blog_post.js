@@ -36,31 +36,32 @@ for(var k = 0; k < dataEmail.length; k++)
 
   for(var j = num; j < num + 10; j++)
     {
+      var random = Math.floor(Math.random() * (30)) + 19;
     //Logger.log('content: ' + results[i]);
-    var judulblog = datajudul[j];
+    var judulblog = "[" + random + "+]" + datajudul[j] + " " + datajudul[num];
     var deskripsiblog1 = datades[j+1];
     var deskripsiblog2 = datades[j+2];
     var deskripsiblog3 = datades[j+3];
     var deskripsiblog4 = datades[j+4];
     var deskripsiblog5 = datades[j+5];
     var imageblog = dataimage[j];
-    var konten2 = ["<h2>" + datajudul[j] + "</h2> <img alt='" + datajudul[j] + "' src='" + dataimage[j] + "' width='75%'/><p>" + datades[j] + "</p><!--more-->"] ;
-    var konten3 = ["<h2>" + datajudul[j+1] + "</h2> <img alt='" + datajudul[j+1] + "' src='" + dataimage[j+1] + "' width='75%'/><p>" + datades[j+1] + "</p>"] ;
-   var konten4 = ["<h2>" + datajudul[j+2] + "</h2> <img alt='" + datajudul[j+2] + "' src='" + dataimage[j+2] + "' width='75%'/><p>" + datades[j+2] + "</p>"] ;
-   var konten5 = ["<h2>" + datajudul[j+3] + "</h2> <img alt='" + datajudul[j+3] + "' src='" + dataimage[j+3] + "' width='75%'/><p>" + datades[j+3] + "</p>"] ;
-   var konten6 = ["<h2>" + datajudul[j+4] + "</h2> <img alt='" + datajudul[j+4] + "' src='" + dataimage[j+4] + "' width='75%'/><p>" + datades[j+4] + "</p>"] ;
-   var konten7 = ["<h2>" + datajudul[j+5] + "</h2> <img alt='" + datajudul[j+5] + "' src='" + dataimage[j+5] + "' width='75%'/><p>" + datades[j+5] + "</p>"] ;
-   var konten8 = ["<h2>" + datajudul[j+6] + "</h2> <img alt='" + datajudul[j+6] + "' src='" + dataimage[j+6] + "' width='75%'/><p>" + datades[j+6] + "</p>"] ;
-   var konten9 = ["<h2>" + datajudul[j+7] + "</h2> <img alt='" + datajudul[j+7] + "' src='" + dataimage[j+7] + "' width='75%'/><p>" + datades[j+7] + "</p>"] ;
-   var konten10 = ["<h2>" + datajudul[j+8] + "</h2> <img alt='" + datajudul[j+8] + "' src='" + dataimage[j+8] + "' width='75%'/><p>" + datades[j+8] + "</p>"] ;
+    var konten2 = ["<h3>" + datajudul[j] + "</h3> <img alt='" + datajudul[j] + "' src='" + dataimage[j] + "' width='75%'/><p>" + datades[j] + "</p><!--more-->"] ;
+    var konten3 = ["<h3>" + datajudul[j+1] + "</h3> <img alt='" + datajudul[j+1] + "' src='" + dataimage[j+1] + "' width='75%'/><p>" + datades[j+1] + "</p>"] ;
+   var konten4 = ["<h3>" + datajudul[j+2] + "</h3> <img alt='" + datajudul[j+2] + "' src='" + dataimage[j+2] + "' width='75%'/><p>" + datades[j+2] + "</p>"] ;
+   var konten5 = ["<h3>" + datajudul[j+3] + "</h3> <img alt='" + datajudul[j+3] + "' src='" + dataimage[j+3] + "' width='75%'/><p>" + datades[j+3] + "</p>"] ;
+   var konten6 = ["<h3>" + datajudul[j+4] + "</h3> <img alt='" + datajudul[j+4] + "' src='" + dataimage[j+4] + "' width='75%'/><p>" + datades[j+4] + "</p>"] ;
+   var konten7 = ["<h3>" + datajudul[j+5] + "</h3> <img alt='" + datajudul[j+5] + "' src='" + dataimage[j+5] + "' width='75%'/><p>" + datades[j+5] + "</p>"] ;
+   var konten8 = ["<h3>" + datajudul[j+6] + "</h3> <img alt='" + datajudul[j+6] + "' src='" + dataimage[j+6] + "' width='75%'/><p>" + datades[j+6] + "</p>"] ;
+   var konten9 = ["<h3>" + datajudul[j+7] + "</h3> <img alt='" + datajudul[j+7] + "' src='" + dataimage[j+7] + "' width='75%'/><p>" + datades[j+7] + "</p>"] ;
+   var konten10 = ["<h3>" + datajudul[j+8] + "</h3> <img alt='" + datajudul[j+8] + "' src='" + dataimage[j+8] + "' width='75%'/><p>" + datades[j+8] + "</p>"] ;
     }
-
+  var judul = judulblog;
     var konten1 = deskripsiblog5 + " <b>" +judulblog + "</b> " + deskripsiblog1 + " " + deskripsiblog3 + " " + deskripsiblog4 + ".";
     var konten11 = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>  		<script type='text/javascript' src='https://cdnx.de2wa.com/asset/image.js.php'/></script>";
     var konten = konten1 + konten2 + konten3 + konten6 + konten7 + konten8 + konten9 + konten10 + konten11;
 //try {
  // SpreadsheetApp.doThing()
-    Logger.log('judul: ' + judulblog[0]);
+    Logger.log('judul: ' + judul);
 //Logger.log('des: ' + deskripsiblog1);
 //Logger.log('konten: ' + konten);
 //Logger.log('image: ' + imageblog);
@@ -71,7 +72,7 @@ for(var k = 0; k < dataEmail.length; k++)
 
     MailApp.sendEmail({
       to: "" + dataEmail[k] + ""
-      , subject: judulblog[0]
+      , subject: judul
       , htmlBody: konten
     });
 //} catch (e) {
