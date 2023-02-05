@@ -53,12 +53,25 @@ Logger.log(mid[i]);
     video.snippet.description = deskrip;//deskripsis[i];
 	//video.snippet.tags = [tags.split(",")];//deskripsis[i];
 	 Logger.log("upload " + i + judul);
-	
+	updateThumbnail(video.id, "https://i.ytimg.com/vi/DyxFmQjy08s/maxresdefault.jpg"); //untuk update thumbnail otomatis
+
 	YouTube.Videos.update(video,'snippet');
 	addRecord(i+1, video.id, mid[i])
 	
 	}
 
+function updateThumbnail(videoId, thumbnailUrl) {
+  var youtube = YouTube.Videos.update(
+    {
+      "thumbnailDetails": {
+        "customThumbnail": {
+          "imageUrl": thumbnailUrl
+        }
+      }
+    },
+    videoId
+  );
+}
 
   function getData(mid) {
    
