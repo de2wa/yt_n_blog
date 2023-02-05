@@ -37,14 +37,18 @@ Logger.log(mid[i]);
   var title = title.replace(/[^\x00-\x7F]/g, "");
   var title = title.replace(/,/g, "");
   var title2 = title.replace(/ /g, "");
- var judul2 =  title + " Full Movie #movie #film #pelicula #viral #" + title2;
- var judul =  title + " FuLLMovie HD (QUALITY)";
- //var judul =  title + " pelicula completa en español | #full #movie #pelicula ";
+  var release = dataMovie.release_date;
+  var years = release.split("-");
+  var tahun = years[0];
+ var judul =  title + " ("+ tahun +") FuLL Movie HD (QUALITY)";
 
 	var tags = "movie, film, imdb, netflix, pelicula, full movie, viral, film, " + title + " free, " + title + ", Full Movie , " + title + " Película Completa , Psicosis pelicula completa , movie free, movie english, , pelicula completa en espanol, movie clips, trailer, online movie";
-  var deskrip =  judul2 + " \n How to Watch " + title + " Full Movie? \n ▶️ Visit this link on.flixplus21.com on your browser \n or \n ▶️ Click Here https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com \n ▶️ and Click Go To Site \n\n" + dataMovie.overview + "\n \n  tags: " + tags;
-	//https:\/\/www.youtube.com\/redirect?event=video_description&q=
-var komen = judul + "▶️ Link https:\/\/www.youtube.com\/redirect?event=video_description&q=https:\/\/on.flixplus21.com\/" + mid[i] + "\/es \n\n	#movie #film #pelicula #viral #" + title ;   
+
+	var deskrip = 
+	
+	title + " (( " + tahun + ") ) Full Movie FREE \n WATCH FULL MOVIE!🎥👉 http://watch.us-tv.xyz/movie/" + mid[i] + " \n DOWNLOAD FULL MOVIE!🎥👉 https://www.youtube.com/redirect?q=http://watch.us-tv.xyz/movie/" + mid[i] + " \n HD 1080P | 4K UHD | 1080P-HD | 720P HD | MKV | MP4 | FLV | DVD | \n All Languages | Hungary | English | Spanish | French | German | Italian | Dutch | Japan | Czech | Korean | Portuguese | Russian | Serbian | Swedish | Slovak | Bulgarian | \n\n Copyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is Trash de for  purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use. No copyright infringement intended. \n\n \n  " + title + " (" + tahun + ") Full Eng Dub \n  " + title + " (" + tahun + ") Full hd quality \n  " + title + " (" + tahun + ") Full Eng Subtitle \n  " + title + " (" + tahun + ") Full Eng Dubbed Watch \n  " + title + " (" + tahun + ") Full Online \n  " + title + " (" + tahun + ") Full Movie free \n  " + title + " (" + tahun + ") Full Movie download hd \n  " + title + " (" + tahun + ") Full Movie free download \n  " + title + " (" + tahun + ") Full Movie hd \n  " + title + " (" + tahun + ") Full Movie online free no download \n  " + title + " (" + tahun + ") Full Movie watch online free \n  " + title + " (" + tahun + ") Película Completa \n  " + title + " (" + tahun + ") Full Movie download \n  " + title + " (" + tahun + ") Online \n  " + title + " (" + tahun + ") Watch Online \n  " + title + " (" + tahun + ") streaming \n  " + title + " (" + tahun + ") movie \n  " + title + " (" + tahun + ") full movie free \n  " + title + " (" + tahun + ") full movie free online \n  " + title + " (" + tahun + ") full movie online \n  " + title + " (" + tahun + ") full movie \n  " + title + " (" + tahun + ") full movie download watch \n  " + title + " (" + tahun + ")full movie \n  " + title + " (" + tahun + ") full movie \n  " + title + " (" + tahun + ") movie cast is there a \n  " + title + " (" + tahun + ") movie \n  " + title + " (" + tahun + ") full movie online free \n  " + title + " (" + tahun + ") full movie free download \n  " + title + " (" + tahun + ") full movie download mp4 \n  " + title + " (" + tahun + ") free movie download \n  " + title + " (" + tahun + ") movie download netnaija \n  " + title + " (" + tahun + ") first movie \n  " + title + " (" + tahun + ") full movie download \n  " + title + " (" + tahun + ") full movie free online \n  " + title + " (" + tahun + ") full movie 123movies \n  " + title + " (" + tahun + ") full movie online \n  " + title + " (" + tahun + ") full movie youtube \n #NewMovie \n #PopularMovie \n #WatchOnlineMovie ";
+
+
 	video.snippet.title = judul;//deskripsis[i];
     video.snippet.description = deskrip;//deskripsis[i];
 	//video.snippet.tags = [tags.split(",")];//deskripsis[i];
