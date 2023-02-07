@@ -15,7 +15,7 @@ for(var i = 0; i < 100; i++) {
 	//video.snippet.tags = tagss[i];
 
   update(video,[i]);
-  updateThumbnail([i], "https://i.ytimg.com/vi/DyxFmQjy08s/maxresdefault.jpg"); //untuk update thumbnail otomatis
+  //updateThumbnail([i], "https://i.ytimg.com/vi/DyxFmQjy08s/maxresdefault.jpg"); //untuk update thumbnail otomatis
 
   //Logger.log(video);
 	}
@@ -61,18 +61,7 @@ Logger.log(mid[i]);
 	
 	}
 
-function updateThumbnail(videoId, thumbnailUrl) {
-  var youtube = YouTube.Videos.update(
-    {
-      "thumbnailDetails": {
-        "customThumbnail": {
-          "imageUrl": thumbnailUrl
-        }
-      }
-    },
-    videoId
-  );
-}
+
 
   function getData(mid) {
    
