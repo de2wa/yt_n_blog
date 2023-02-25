@@ -1,0 +1,76 @@
+function update() {
+ var num = Math.floor(Math.random() * (max - 1 + 1)) + 1;
+ var ss= SpreadsheetApp.getActiveSpreadsheet();
+  var tableSheet1 = ss.getSheetByName("Sheet1");
+  var titlesheet = tableSheet1.getRange("B:B").getValues();
+    var mid = titlesheet.filter(String);
+  var emails = tableSheet1.getRange("C:C").getValues();
+    var email = emails.filter(String);
+
+for(var i = 0; i < email.length; i++)
+  {
+
+    var data = mid.length;
+  var max = data - 20;
+  var num = Math.floor(Math.random() * (max - 1 + 1)) + 1;
+
+  for(var j = num; j < num + 10; j++)
+    {
+ Logger.log(mid[j]);
+
+  var dataMovie = getData(mid[j]);
+  var tmid = dataMovie.id;
+  var title = dataMovie.title;
+   var title = title.replace(/&quot;/g, '');
+  var title = title.replace(/[^\x00-\x7F]/g, "");
+  var title = title.replace(/,/g, "");
+  var title2 = title.replace(/ /g, "");
+	 var release = dataMovie.release_date;
+  var years = release.split("-");
+  var tahun = years[0];
+	var poster = "https://image.tmdb.org/t/p/w185" + dataMovie.poster_path;
+  var genre = dataMovie.genres[0].name;
+  var production = dataMovie.production_companies[0].name;
+  var desk = dataMovie.overview;
+  var cast = dataMovie.credits.cast[0].name; 
+  var sound = dataMovie.credits.crew[0].name;
+  var karakter = dataMovie.credits.cast[0].character; 
+  var backdrop = "https://image.tmdb.org/t/p/w780" + dataMovie.backdrop_path;
+    var backdrop2 = "https://image.tmdb.org/t/p/w300" + dataMovie.backdrop_path;
+  var titleSpintax =  [ title + " "+ tahun + " Pelicula Completa en Español Latino "," Ver " + title +" "+ tahun + " Pelicula Completa Gratis en HD ","Descargar " + title + " (" + tahun + ") Pelicula Completa en Castellano ", title + " Pelicula Completa en Español Latino","Ver " + title + " Pelicula Completa Gratis en HD","Descargar " + title + " Pelicula Completa en Castellano", title + " Pelicula Completa Online Subtitulada", title + " Pelicula Completa en Español de España","Donde Ver "+ title + " Pelicula Completa en Línea", title + " Pelicula Completa en Español HD 720p","Ver " + title + " Pelicula Completa en Netflix", title + " Pelicula Completa en Amazon Prime Video", title + " Pelicula Completa en Disney+"];
+var randomIndex = Math.floor(Math.random() * titleSpintax.length);
+  var judul =  titleSpintax[randomIndex];
+	
+var article = '<div><img src="' + poster + '" alt="' + title + '" style="width:100%; height: auto;"></div> <h3>Introducción</h3><p>¡Bienvenidos a la página de ' + judul + '! Esta película es una {película de|cinta de|filme de} ' + genre + ' dirigida por <strong>' + production + '</strong>. La trama de la película gira en torno a ' + desk + '. La película cuenta con un elenco de renombre, incluyendo a ' + cast + '. Además de una trama emocionante, la película presenta efectos visuales impresionantes y una banda sonora impactante, creada por el compositor <strong>'+sound+'</strong>.</p>'+
+
+'<h3>Detalles de la Película</h3>' +
+'<ul>' +
+'<li>Título Original: ' + title + '</li>' +
+'<li>Año: '+tahun+'</li>' +
+'<li>Género: '+genre+'</li>' +
+'<li>Production: "'+production+'"</li>' +
+'<li>Reparto: '+cast+'</li>' +
+'</ul>' +
+'<p>Si estás buscando una película emocionante y entretenida, ¡no busques más! ' +title+' es la elección perfecta. ¡Haz clic en el siguiente enlace para ver la película completa ahora mismo!</p> <div style="text-align:center;"><a href="https://on.flixplus21.com/?action=movie&id='+tmid+'" target="_blank"><button style="background-color: #f44336; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Ver película completa</button></a></div> <h3>Desarrollo</h3><p>En <em>'+judul+'</em>, los espectadores son llevados a '+production+' y son introducidos a los personajes principales, <strong>'+karakter+'</strong> y sus motivaciones. La película presenta una serie de desafíos para los personajes principales, incluyendo '+desk+'.</p><div> <img src="'+backdrop+'" alt="'+title+' '+tahun+'" style="width:100%; height: auto;"></div><p>La película cuenta con una gran cantidad de escenas memorables, como '+desk+'. Estas escenas y el diálogo bien escrito ayudan a mantener al espectador en el borde de su asiento.</p><h3>Conclusión</h3><p>En conclusión, <em>'+title+'</em> es una película que no te querrás perder. Con una trama emocionante, personajes memorables, efectos visuales impresionantes y una banda sonora impactante, es una experiencia única en la gran pantalla. Ya sea que seas un fanático del género o simplemente busques una buena película para ver, <em>'+title+'</em> es una excelente opción. ¡No esperes más, haz clic en el enlace de arriba para ver la película completa ahora mismo!</p>'+
+'<div><img src="'+backdrop2+'" alt="'+judul+'" style="width:100%; height: auto;"></div>';
+	
+  
+  //Logger.log(article);
+   Logger.log(email[i]); 
+    GmailApp.sendEmail(email[i], judul, '',{htmlBody: article} );
+  }
+
+	}
+}
+
+  function getData(mid) {
+   
+  var url = 'http://api.themoviedb.org/3/movie/' + mid + '?api_key=8c486b331d0164e5ae261aad23004b4f&language=es&append_to_response=credits';
+    var response = UrlFetchApp.fetch(url); // get feed
+ var data = JSON.parse(response.getContentText()); //
+  //var data = dataAll.value.items;
+ 
+ return data;
+//Logger.log(data);
+
+}
