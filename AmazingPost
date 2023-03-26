@@ -1,0 +1,85 @@
+function post() {
+var kw = "convert garage";
+var email = " gilsanikar.sabina02@blogger.com";
+const title = /(?<="t":").*?(?=")/gi;
+
+var inputjudul = 'buatkan 1 judul untuk artikel long tail keyword tentang "'+ kw + '" dalam bahasa inggris';
+var judul = getChatGPTResponse(inputjudul);
+
+
+
+var rand = Math.floor(Math.random() * (200 - 1 + 1)) + 1;
+  var url = "https://www.bing.com/images/search?q=" + kw + "&form=HDRSC2&first=" + rand + "&tsc=ImageHoverTitle";
+
+  var str = UrlFetchApp.fetch(url).getContentText();
+  var data1 = str.replace(/&quot;/g, '"');
+  var data = data1.replace(/[^\x00-\x7F]/g, "");
+
+  
+
+  const mainRegex = /<div class=\"iuscp isv\"([\s\S]*?)}" onclick="/gi;
+  var results = data.match(mainRegex);
+
+  const image = /(?<="murl":").*?(?=")/gi;
+  //const title = /(?<="t":").*?(?=")/gi;
+  //const desc = /(?<="desc":").*?(?=")/gi;
+
+  //const teamLogoPass = /<img alt="([\s\S]*?)" class="hCL kVc L4E MIw"/gi;
+  var randNum = Math.floor(Math.random() * 10) + 1;
+  var gambar = [];
+for (var i = 0; i < 10; i++) {
+   // randArray.push(Math.floor(Math.random() * 10) + 1);
+
+     var matches = results[i].match(image); // mencocokkan link gambar dengan regular expression
+
+  if (matches) {
+    gambar.push(matches[0]); // menambahkan link gambar ke dalam array
+  }
+
+}
+//var gambar_rand = gambar.sort(function() { return 0.5 - Math.random() }).slice(0, 10);
+
+var judul1 = judul.replace(/"/g, '');
+//var artikel = article.replace(/image_src1/g, gambar[1]);
+
+
+var inputarticle = 'buatkan artikel tentang ' + judul + ' dalam bahasa inggris tanpa h1, tambahkan image pada setiap paragraph dengan gambar berikut ' + gambar[1] + ',' + gambar[2] + ',' + gambar[3] + ',' + gambar[4] + ',' + gambar[5] + ',' + gambar[6] + ', tambahkan alt sesuai keyword dalam format html, tambahkan juga penegasan keyword dengan bold italic dan atau underline dengan keyword di artikel agar artikel seo friendly, tambahkan juga h3, h4 sesuai keyword';
+  var article = getChatGPTResponse(inputarticle);
+   // var konten = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>  		<script type='text/javascript' src='https://cdnx.de2wa.com/asset/image.js.php'/></script>";
+
+//var artikel = article + konten;
+Logger.log(judul1);
+
+//Logger.log(article);
+
+  GmailApp.sendEmail(email, judul1, '',{htmlBody: article} );
+
+}
+
+
+
+function getChatGPTResponse(input) {
+  var apiKey = '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';
+  var url = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
+  var headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + apiKey
+  };
+  var data = {
+    'prompt': input,
+    'max_tokens': 1000,
+    'temperature': 0.7,
+    'top_p': 1,
+    'frequency_penalty': 0,
+    'presence_penalty': 0
+  };
+  var options = {
+    'method': 'post',
+    'headers': headers,
+    'payload': JSON.stringify(data)
+  };
+  var response = UrlFetchApp.fetch(url, options);
+  var result = JSON.parse(response.getContentText());
+  return result.choices[0].text;
+}
+
