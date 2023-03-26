@@ -59,7 +59,7 @@ Logger.log(judul1);
 
 
 function getChatGPTResponse(input) {
-  var apiKey = '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';
+  var apiKey = 'sk-xxxxxx';
   var url = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
   var headers = {
     'Content-Type': 'application/json',
