@@ -45,7 +45,7 @@ var judul1 = judul.replace(/"/g, '');
 
 var inputarticle = 'buatkan artikel tentang ' + judul + ' dalam bahasa inggris tanpa h1, tambahkan image pada setiap paragraph dengan gambar berikut ' + gambar[1] + ',' + gambar[2] + ',' + gambar[3] + ',' + gambar[4] + ',' + gambar[5] + ',' + gambar[6] + ', tambahkan alt sesuai keyword dalam format html, tambahkan juga penegasan keyword dengan bold italic dan atau underline dengan keyword di artikel agar artikel seo friendly, tambahkan juga h3, h4 sesuai keyword';
   var article = getChatGPTResponse(inputarticle);
-    var konten = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>  		<script type='text/javascript' src='https://cdnx.de2wa.com/asset/image.js.php'/></script>";
+    var konten = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>  		<script type='text/javascript' src='https://cdnx.de2wa.com/asset/image_chat.js.php'/></script>";
 
 var artikel = article + konten;
 Logger.log(judul1);
