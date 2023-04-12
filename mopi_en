@@ -76,7 +76,7 @@ var article = '<h2>Introduction</h2>'+
 '<h3>Watch '+title+' Full Movie Free</h3>'+
 '<img src="'+image+'" alt="'+title+' Movie poster">' +
 '<p>Watch '+title+' now by clicking button bellow and experience the magic of cinema.</p>'+
-"<div id='playnow'><a  href='https://on.flixplus21.com/en/"+tmid+"/blog_"+tmid+".html'> <img class='no-pin' width='250px' src='https://cdnx.de2wa.com/asset/watch.jpg'></a></div><!--more-->"+
+"<div id='playnow'><a  href='https://on.flixplus21.com/en/movie/"+tmid+"/blog_"+tmid+".html'> <img class='no-pin' width='250px' src='https://cdnx.de2wa.com/asset/watch.jpg'></a></div><!--more-->"+
 '<h3>Plot Summary</h3>'+
 '<p>The movie follows the story of '+desk+'. The movie stars with '+cast+' as '+karakter+'. Along the way, the protagonist faces various challenges, including conflict or obstacles</p>.'+
 '<h3>Acting and Characters</h3>'+ 
