@@ -79,7 +79,7 @@ var article = '<h2>Introduction</h2>'+
 "<div id='playnow'><a  href='https://on.flixplus21.com/en/"+tmid+"/blog_"+tmid+".html'> <img class='no-pin' width='250px' src='https://cdnx.de2wa.com/asset/watch.jpg'></a></div><!--more-->"+
 '<h3>Plot Summary</h3>'+
 '<p>The movie follows the story of '+desk+'. The movie stars with '+cast+' as '+karakter+'. Along the way, the protagonist faces various challenges, including conflict or obstacles</p>.'+
-'<p>Acting and Characters</h3>'+ 
+'<h3>Acting and Characters</h3>'+ 
 '<p><strong>'+cast+'</strong> deliver exceptional performances in '+title+'. The supporting cast is equally impressive, adding depth to the story. The characters are well-developed, and the audience can easily relate to their struggles, evoking empathy and emotions</p>.'+
 '<h3>Cinematography and Soundtrack </h3>'+ 
 '<p>The cinematography in '+title+' is stunning, with well-framed shots that add to the overall experience. The soundtrack is equally impressive, with a background score and songs that elevate the viewing experience</p>.'+
