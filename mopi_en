@@ -1,0 +1,120 @@
+function auto_post() 
+{
+  // *************************************************************************
+  // de2wa.com
+  // *************************************************************************
+
+ var genre = "thriller";
+ var email = ["gijelsamuel.blog1@blogger.com"];
+
+
+
+ var rand = Math.floor(Math.random() * (5000 - 1 + 1)) + 1;
+  //var url = "https://www.imdb.com/search/title/?title_type=feature&genres=" + genre + "&start=" + rand + "&explore=genres&ref_=adv_nxt";
+  var url = "https://www.imdb.com/search/title/?title_type=feature&start=" + rand ;
+
+  var str = UrlFetchApp.fetch(url).getContentText();
+  var data1 = str.replace(/&quot;/g, '"');
+  var data = data1.replace(/[^\x00-\x7F]/g, "");
+
+  
+
+  const mainRegex = /<div class="lister-item mode-advanced"([\s\S]*?)Director/gi;
+  var results = data.match(mainRegex);
+  //Logger.log(results);
+
+  const mids = /(?<=class=\"ribbonize\" data-tconst=").*?(?=")/gi;
+  //const title = /(?<=<img alt=").*?(?=")/gi;
+  //const image = /(?<=loadlate=").*?(?=")/gi;
+  //const title = /(?<=<img alt=").*?(?=")/gi;
+  //const desc = /<p class="text-muted">([\s\S]*?)<\/p>/gi;
+ // const year = /(?<=class="lister-item-year text-muted unbold">\().*?(?=\)<\/span>)/gi;
+//Logger.log(mid);
+  //const teamLogoPass = /<img alt="([\s\S]*?)" class="hCL kVc L4E MIw"/gi;
+
+var randomIDs = [];
+for(var j = 0; j < 50; j++)
+{
+  var id = results[j].match(mids);
+  var randomID = id;
+  randomIDs.push(randomID);
+}
+for(var i = 0; i < email.length; i++)
+  {
+var randomIndex = Math.floor(Math.random() * randomIDs.length); // generate a random index between 0 and 49
+var mid = randomIDs[randomIndex];
+
+Logger.log(mid);
+
+
+  var dataMovie = getData(mid);
+  var tmid = dataMovie.id;
+  var title = dataMovie.title;
+   var title = title.replace(/&quot;/g, '');
+  var title = title.replace(/[^\x00-\x7F]/g, "");
+  var title = title.replace(/,/g, "");
+  var title2 = title.replace(/ /g, "");
+	 var release = dataMovie.release_date;
+  var years = release.split("-");
+  var tahun = years[0];
+	var poster = "https://image.tmdb.org/t/p/w185" + dataMovie.poster_path;
+  var genre = dataMovie.genres[0].name;
+  var production = dataMovie.production_companies[0].name;
+  var desk = dataMovie.overview;
+  var cast = dataMovie.credits.cast[0].name; 
+  var sound = dataMovie.credits.crew[0].name;
+  var imagex = dataMovie.images.posters;
+  var image =  "https://image.tmdb.org/t/p/original"+ imagex[Math.floor(Math.random() * imagex.length)].file_path;
+  var karakter = dataMovie.credits.cast[0].character; 
+  var backdrop = "https://image.tmdb.org/t/p/w780" + dataMovie.backdrop_path;
+    var backdrop2 = "https://image.tmdb.org/t/p/w300" + dataMovie.backdrop_path;
+
+  var judul =  'Watch '+ title + ' Full Movie Online Free '+tahun+'| Stream'+rand;
+	
+var article = '<h2>Introduction</h2>'+
+'<p>Have you ever watched a movie that left you speechless? <bold>' + title + '</bold> is one such movie. Released in '+tahun+', this <a href="/search/label/'+genre+'/">'+genre+'</a> movie is a masterpiece producted by <i>'+production+'</i> and stars '+cast+'. With its outstanding performances, stunning visuals, and thought-provoking themes, '+title+' is a movie you must watch.</p>'+
+'<h3>Watch '+title+' Full Movie Free</h3>'+
+'<img src="'+image+'" alt="'+title+' Movie poster">' +
+'<p>Watch '+title+' now by clicking button bellow and experience the magic of cinema.</p>'+
+"<div id='playnow'><a  href='https://on.flixplus21.com/en/"+tmid+"/blog_"+tmid+".html'> <img class='no-pin' width='250px' src='https://cdnx.de2wa.com/asset/watch.jpg'></a></div><!--more-->"+
+'<h3>Plot Summary</h3>'+
+'<p>The movie follows the story of '+desk+'. The movie stars with '+cast+' as '+karakter+'. Along the way, the protagonist faces various challenges, including conflict or obstacles</p>.'+
+'<p>Acting and Characters</h3>'+ 
+'<p><strong>'+cast+'</strong> deliver exceptional performances in '+title+'. The supporting cast is equally impressive, adding depth to the story. The characters are well-developed, and the audience can easily relate to their struggles, evoking empathy and emotions</p>.'+
+'<h3>Cinematography and Soundtrack </h3>'+ 
+'<p>The cinematography in '+title+' is stunning, with well-framed shots that add to the overall experience. The soundtrack is equally impressive, with a background score and songs that elevate the viewing experience</p>.'+
+'<h3>Themes and Message </h3>'+ 
+'<p>'+title+' tackles  in a compelling way, conveying a powerful message. The themes are relevant and thought-provoking, making the movie not only entertaining but also educational.</p>'+
+'<h2>Conclusion </h2>'+ 
+"<p>In conclusion, "+title+" is a masterpiece that you cannot afford to miss. Its outstanding performances, stunning visuals, and thought-provoking themes make it a must-watch for any movie lover. Don't wait any longer - watch "+title+" now for Free and experience the magic of cinema.</p>"
+	
+  
+  Logger.log(article);
+   //Logger.log(email[i]); 
+      // GmailApp.sendEmail(email[i], judul, '',{htmlBody: article} );
+
+MailApp.sendEmail({
+      to: email[i]
+      , subject: judul
+      , htmlBody: article
+    });
+
+	}
+
+	
+}
+
+
+function getData(mid) {
+   
+  var url = 'http://api.themoviedb.org/3/movie/' + mid + '?api_key=8c486b331d0164e5ae261aad23004b4f&language=en&append_to_response=credits,images';
+    var response = UrlFetchApp.fetch(url); // get feed
+ var data = JSON.parse(response.getContentText()); //
+  //var data = dataAll.value.items;
+ 
+ return data;
+//Logger.log(data);
+
+}
+
+
