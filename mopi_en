@@ -76,7 +76,7 @@ var article = '<h2>Introduction</h2>'+
 '<h3>Watch '+title+' Full Movie Free</h3>'+
 '<img src="'+image+'" alt="'+title+' Movie poster">' +
 '<p>Watch '+title+' now by clicking button bellow and experience the magic of cinema.</p>'+
-"<div id='playnow'><a  href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimpyodjxJC9S1fMze3fjrpo3AfB23s5K9jOJPz5mV_dPt1kQW28Oo6fkVyxyHWGDzdkAv4SPe2XUX68SKzAFptPO-U6De8g-8Cvxpe6hWP6q1SGr5qVqDp-bbyo3dCqY2vHiAtNzwpX15zur5QpsRZiCR-sk-A7c4-1wkw3Kymm9I1B8jhmkaqoeO_/s320/62442e46776898b4d41425a90fee12df.jpg'></a></div><!--more-->"+
+"<div id='playnow'><a  href='https://on.flixplus21.com/en/movie/"+tmid+"/blog_"+tmid+".html'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimpyodjxJC9S1fMze3fjrpo3AfB23s5K9jOJPz5mV_dPt1kQW28Oo6fkVyxyHWGDzdkAv4SPe2XUX68SKzAFptPO-U6De8g-8Cvxpe6hWP6q1SGr5qVqDp-bbyo3dCqY2vHiAtNzwpX15zur5QpsRZiCR-sk-A7c4-1wkw3Kymm9I1B8jhmkaqoeO_/s320/62442e46776898b4d41425a90fee12df.jpg'></a></div><!--more-->"+
 '<h3>Plot Summary</h3>'+
 '<p>The movie follows the story of '+desk+'. The movie stars with '+cast+' as '+karakter+'. Along the way, the protagonist faces various challenges, including conflict or obstacles</p>.'+
 '<h3>Acting and Characters</h3>'+ 
@@ -89,7 +89,7 @@ var article = '<h2>Introduction</h2>'+
 "<p>In conclusion, "+title+" is a masterpiece that you cannot afford to miss. Its outstanding performances, stunning visuals, and thought-provoking themes make it a must-watch for any movie lover. Don't wait any longer - watch "+title+" now for Free and experience the magic of cinema.</p>"
 	
   
-  Logger.log(article);
+  Logger.log(title);
    //Logger.log(email[i]); 
       // GmailApp.sendEmail(email[i], judul, '',{htmlBody: article} );
 
