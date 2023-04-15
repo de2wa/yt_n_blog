@@ -74,9 +74,9 @@ Logger.log(mid);
 var article = '<h2>Introduction</h2>'+
 '<p>Have you ever watched a movie that left you speechless? <bold>' + title + '</bold> is one such movie. Released in '+tahun+', this <a href="/search/label/'+genre+'/">'+genre+'</a> movie is a masterpiece producted by <i>'+production+'</i> and stars '+cast+'. With its outstanding performances, stunning visuals, and thought-provoking themes, '+title+' is a movie you must watch.</p>'+
 '<h3>Watch '+title+' Full Movie Free</h3>'+
-'<img src="'+image+'" alt="'+title+' Movie poster">' +
+'<img width="250px" src="'+image+'" alt="'+title+' Movie poster">' +
 '<p>Watch '+title+' now by clicking button bellow and experience the magic of cinema.</p>'+
-"<div id='playnow'><a  href='https://on.flixplus21.com/en/movie/"+tmid+"/blog_"+tmid+".html'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimpyodjxJC9S1fMze3fjrpo3AfB23s5K9jOJPz5mV_dPt1kQW28Oo6fkVyxyHWGDzdkAv4SPe2XUX68SKzAFptPO-U6De8g-8Cvxpe6hWP6q1SGr5qVqDp-bbyo3dCqY2vHiAtNzwpX15zur5QpsRZiCR-sk-A7c4-1wkw3Kymm9I1B8jhmkaqoeO_/s320/62442e46776898b4d41425a90fee12df.jpg'></a></div><!--more-->"+
+"<!--more--><div id='playnow'><a  href='https://on.flixplus21.com/en/movie/"+tmid+"/blog_"+tmid+".html'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimpyodjxJC9S1fMze3fjrpo3AfB23s5K9jOJPz5mV_dPt1kQW28Oo6fkVyxyHWGDzdkAv4SPe2XUX68SKzAFptPO-U6De8g-8Cvxpe6hWP6q1SGr5qVqDp-bbyo3dCqY2vHiAtNzwpX15zur5QpsRZiCR-sk-A7c4-1wkw3Kymm9I1B8jhmkaqoeO_/s320/62442e46776898b4d41425a90fee12df.jpg'></a></div>"+
 '<h3>Plot Summary</h3>'+
 '<p>The movie follows the story of '+desk+'. The movie stars with '+cast+' as '+karakter+'. Along the way, the protagonist faces various challenges, including conflict or obstacles</p>.'+
 '<h3>Acting and Characters</h3>'+ 
