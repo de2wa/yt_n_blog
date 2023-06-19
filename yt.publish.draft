@@ -1,10 +1,4 @@
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-for(var i = 1; i <= 18000000; i++) {
-  console.log(i);
-  await sleep(1000);
-}
+
 
 (() => {
     // -----------------------------------------------------------------
